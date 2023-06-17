@@ -13,4 +13,6 @@
  Together, using replayable sources,  checkpointing and write-ahead logs to record the offset range of the data being processed in each trigger and idempotent sinks, 
  Structured Streaming can ensure end-to-end exactly-once semantics under any failure.
  
+ https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#creating-streaming-dataframes-and-streaming-datasets
+ 
  
