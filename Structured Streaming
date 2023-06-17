@@ -1,0 +1,8 @@
+ the system ensures end-to-end exactly-once fault-tolerance guarantees through checkpointing and Write-Ahead Logs. 
+ 
+ Internally, by default, Structured Streaming queries are processed using a micro-batch processing engine, which processes data streams as a series of small batch jobs 
+ thereby achieving end-to-end latencies as low as 100 milliseconds and exactly-once fault-tolerance guarantees. However, since Spark 2.3, we have introduced a new 
+ low-latency processing mode called Continuous Processing, which can achieve end-to-end latencies as low as 1 millisecond with at-least-once guarantees. 
+ 
+ Event-time is the time embedded in the data itself. ( you probably want to use the time when the data was generated (that is, event-time in the data), rather than the
+ time Spark receives them.)
