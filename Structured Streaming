@@ -6,3 +6,11 @@
  
  Event-time is the time embedded in the data itself. ( you probably want to use the time when the data was generated (that is, event-time in the data), rather than the
  time Spark receives them.)
+ 
+ watermarking allows the user to specify the threshold of late data, and allows the engine to accordingly clean up old state
+ 
+ Delivering end-to-end exactly-once semantics was one of key goals behind the design of Structured Streaming.
+ Together, using replayable sources,  checkpointing and write-ahead logs to record the offset range of the data being processed in each trigger and idempotent sinks, 
+ Structured Streaming can ensure end-to-end exactly-once semantics under any failure.
+ 
+ 
