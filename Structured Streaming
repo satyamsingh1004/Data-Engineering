@@ -19,6 +19,8 @@ However, to run this query for days, it’s necessary for the system to bound th
 This means the system needs to know when an old aggregate can be dropped from the in-memory state because the application is not going to receive late data for that 
 aggregate any more. To enable this, in Spark 2.1, we have introduced watermarking
 
+For a specific window ending at time T, the engine will maintain state and allow late data to update the state until (max event time seen by the engine - late threshold > T).
 
+Spark supports three types of time windows: tumbling (fixed), sliding and session.
  
  
