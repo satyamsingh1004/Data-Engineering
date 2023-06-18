@@ -13,6 +13,12 @@
  Together, using replayable sources,  checkpointing and write-ahead logs to record the offset range of the data being processed in each trigger and idempotent sinks, 
  Structured Streaming can ensure end-to-end exactly-once semantics under any failure.
  
- https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#creating-streaming-dataframes-and-streaming-datasets
+Structured Streaming can maintain the intermediate state for partial aggregates for a long period of time such that late data can update aggregates of old windows correctly,
+
+However, to run this query for days, it’s necessary for the system to bound the amount of intermediate in-memory state it accumulates. 
+This means the system needs to know when an old aggregate can be dropped from the in-memory state because the application is not going to receive late data for that 
+aggregate any more. To enable this, in Spark 2.1, we have introduced watermarking
+
+
  
  
